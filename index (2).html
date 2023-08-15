@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <style>
+    .element {
+      background-image: url('https://c4.wallpaperflare.com/wallpaper/660/1007/743/abstract-pattern-design-texture-wallpaper-preview.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-size: 24px;
+    }
+
+    #btn {
+      padding: 10px 20px;
+      border: none;
+      background: black;
+      color: red;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="element">
+    <button id="btn">CLICK HERE</button>
+  </div>
+
+  <div class="p1">
+    <p id="p1">ok</p>
+  </div>
+  <div class="p2">
+    <p id="p2">ok</p>
+  </div>
+  <div class="p3">
+    <p id="p3">ok</p>
+  </div>
+  <div class="p4">
+    <p id="p4">ok</p>
+  </div>
+
+  <script>
+    // Check if 'myValue' exists in localStorage
+    if (localStorage.getItem("myValue")) {
+      // If it exists, assign its value to 'b'
+      b = parseInt(localStorage.getItem("myValue"));
+    } else {
+      // If it doesn't exist, set 'b' to 0
+      b = 0;
+    }
+    
+    let P = document.getElementById("p1");
+    let B = document.getElementById("p2");
+    let C = document.getElementById("p3");
+    let D = document.getElementById("p4");
+
+    P.style.color = "black";
+    B.style.color = "black";
+    C.style.color = "black";
+    D.style.color = "black";
+
+    let a = document.getElementById("btn");
+    a.addEventListener('click', () => {
+      b += 1;
+      P.style.color = "cyan";
+      B.style.color = "yellow";
+      C.style.color = "blue";
+      D.style.color = "green";
+      
+      setTimeout(() => {
+        P.style.color = "black";
+        B.style.color = "black";
+        C.style.color = "black";
+        D.style.color = "black";
+      }, 1000);
+      
+      localStorage.setItem("myValue", b);
+      console.log(b);
+    });
+  </script>
+
+</body>
+
+</html>
